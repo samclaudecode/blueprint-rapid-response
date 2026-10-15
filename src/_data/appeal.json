@@ -1,0 +1,58 @@
+{
+  "countdown_label": "Matching deadline in:",
+  "countdown_to": "2026-12-01T23:59:00-05:00",
+  "photo": "https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=1200&q=80",
+  "eyebrow": "Why this matters",
+  "heading": "Our only emergency room is at risk",
+  "text": "St. Mary's is the only A&E within 40 minutes of our town. The hospital board votes next month on closing it. Local businesses will match every gift made before Friday, up to \u00a325,000.",
+  "raised": 18450,
+  "target": 25000,
+  "currency": "\u00a3",
+  "donate_heading": "Give before the deadline",
+  "donate_text": "Every pound you give before Friday is matched by local businesses, up to £25,000.",
+  "reasons_heading": "Where your money goes",
+  "reasons": [
+    {
+      "title": "Ads that reach voters",
+      "text": "Digital and radio ads in the districts that decide this fight.",
+      "icon": "megaphone"
+    },
+    {
+      "title": "Organizers on the ground",
+      "text": "Paid organizers who knock doors and recruit volunteers.",
+      "icon": "people"
+    },
+    {
+      "title": "Legal defence",
+      "text": "Lawyers ready to challenge the decision in court.",
+      "icon": "gavel"
+    }
+  ],
+  "learn_more": "Learn more",
+  "ticker": [
+    "Every gift doubled until Friday",
+    "Board vote: 12 November",
+    "600 people have given",
+    "Our only A&E for 40 minutes"
+  ],
+  "sticker": "Every \u00a31 becomes \u00a32",
+  "other_heading": "Can't give right now?",
+  "other_text": "There are other ways to help win this.",
+  "actions": [
+    {
+      "label": "Write",
+      "title": "Email the hospital board before the vote",
+      "link": "/updates/"
+    },
+    {
+      "label": "Share",
+      "title": "Send this appeal to five friends",
+      "link": "#share"
+    },
+    {
+      "label": "Show up",
+      "title": "Join the vigil outside St. Mary's on Saturday",
+      "link": "/updates/"
+    }
+  ]
+}

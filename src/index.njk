@@ -1,0 +1,90 @@
+---
+layout: base.njk
+title: Home
+---
+{% set pct = ((appeal.raised / appeal.target) * 100) | round if appeal.target else 0 %}
+{% if appeal.ticker | length %}{% set items = appeal.ticker %}{% include "ticker.njk" %}{% endif %}
+
+<section class="on-brand rr-hero">
+  <div class="wrap rr-grid">
+    <div>
+      <h1>{{ site.hero.headline | mark(site.hero.highlight) | safe }}</h1>
+      <p class="lead">{{ site.hero.subheadline }}</p>
+      {% if appeal.target %}
+      <div class="progress">
+        <div class="rr-raised"><span class="rr-big">{{ appeal.currency }}{{ appeal.raised | money }}</span> raised of {{ appeal.currency }}{{ appeal.target | money }}</div>
+        <div class="progress-bar"><span style="width:{{ 100 if pct > 100 else pct }}%"></span></div>
+      </div>
+      {% endif %}
+      {% if appeal.countdown_to %}
+      <div class="rr-countdown" data-until="{{ appeal.countdown_to }}" hidden>
+        <span class="rr-cd-label">{{ appeal.countdown_label }}</span>
+        <span class="rr-cd"><b data-u="d">0</b><small>days</small></span><span class="rr-cd"><b data-u="h">0</b><small>hrs</small></span><span class="rr-cd"><b data-u="m">0</b><small>mins</small></span><span class="rr-cd"><b data-u="s">0</b><small>secs</small></span>
+      </div>
+      {% endif %}
+      <p class="cta"><a class="btn btn-accent btn-lg" href="#donate">{{ site.donate.button or 'Donate now' }}</a><a class="link-quiet" href="#other">Other ways to help</a></p>
+    </div>
+    <div class="rr-visual">
+      {% set src = site.hero.image or appeal.photo %}{% set cls = "rr-photo" %}{% include "photo.njk" %}
+      {% if appeal.sticker %}<p class="rr-sticker">{{ appeal.sticker }}</p>{% endif %}
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap grid-2 rr-why">
+    <h2>{{ appeal.heading }}</h2>
+    <p class="lead">{{ appeal.text }}</p>
+  </div>
+  {% if appeal.reasons | length %}
+  <div class="wrap">
+    <p class="eyebrow rr-reasons-head">{{ appeal.reasons_heading }}</p>
+    <div class="grid-3">
+      {% for r in appeal.reasons %}
+        <div class="stat">{% if r.icon %}{% set name = r.icon %}{% include "icon.njk" %}{% endif %}<h3 style="margin-top:12px">{{ r.title }}</h3><p>{{ r.text }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</section>
+
+<section id="donate" class="soft">
+  <div class="wrap with-aside">
+    <div>
+      <h2>{{ appeal.donate_heading }}</h2>
+      <p class="lead">{{ appeal.donate_text }}</p>
+      <div id="other" class="rr-other">
+        <h3>{{ appeal.other_heading }}</h3>
+        <p class="muted">{{ appeal.other_text }}</p>
+        {% set actions = appeal.actions %}{% include "actions.njk" %}
+      </div>
+      <div id="share">{% include "share.njk" %}</div>
+    </div>
+    <div class="card-box">
+      <p class="ph-title">{{ site.donate.title }}</p>
+      {% set cfg = site.donate %}{% include "embed.njk" %}
+    </div>
+  </div>
+</section>
+
+{% include "cta-band.njk" %}
+
+{% include "latest-updates.njk" %}
+
+<script>
+  // Countdown: ticks every second and hides itself once the deadline passes.
+  (function () {
+    var bar = document.querySelector(".rr-countdown");
+    if (!bar) return;
+    var end = new Date(bar.dataset.until).getTime();
+    if (isNaN(end)) return;
+    function tick() {
+      var left = Math.max(0, end - Date.now());
+      if (!left) { bar.hidden = true; return; }
+      var parts = { d: left / 864e5, h: left / 36e5 % 24, m: left / 6e4 % 60, s: left / 1e3 % 60 };
+      for (var k in parts) bar.querySelector('[data-u="' + k + '"]').textContent = String(Math.floor(parts[k])).padStart(2, "0");
+      bar.hidden = false;
+    }
+    tick(); setInterval(tick, 1000);
+  })();
+</script>

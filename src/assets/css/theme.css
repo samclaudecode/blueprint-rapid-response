@@ -1,0 +1,36 @@
+/* Rapid Response ("Bulletin"): a text-led hero on the brand colour, a scrolling deadline strip and a stamped sticker. */
+.tpl-rapid-response { --btn-radius: 999px; }
+.tpl-rapid-response .btn:hover { box-shadow: 0 6px 0 var(--ink); }
+.tpl-rapid-response .site-header { background: var(--brand); color: #fff; border-bottom: 0; }
+.tpl-rapid-response .site-header .btn { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+.tpl-rapid-response .ticker { border-color: var(--brand); }
+.rr-hero { padding: 72px 0 96px; }
+.rr-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, 1fr); gap: 64px; align-items: center; }
+.rr-hero h1 { font-size: clamp(2.8rem, 7vw, 5.6rem); }
+.rr-hero .mark { background: none; color: var(--accent); }
+.rr-hero .lead { color: rgba(255,255,255,.88); max-width: 32em; }
+.rr-raised { font-weight: 600; margin-bottom: 10px; }
+.rr-big { font-family: var(--font-head); font-weight: var(--head-weight); letter-spacing: var(--head-track); font-size: 2.4rem; color: var(--accent); margin-right: 6px; }
+.rr-hero .progress-bar { background: rgba(255,255,255,.15); max-width: 520px; height: 16px; border-radius: 999px; overflow: hidden; }
+.rr-hero .progress-bar span { box-shadow: none; border-radius: 999px; }
+.rr-countdown { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 28px; }
+.rr-cd-label { width: 100%; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .1em; opacity: .8; }
+.rr-cd { display: grid; place-items: center; min-width: 68px; padding: 8px 6px; border: 2px solid rgba(255,255,255,.35); border-radius: 12px; }
+.rr-cd b { font-family: var(--font-head); font-size: 1.8rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.rr-cd small { font-size: 12px; opacity: .8; }
+.rr-hero .link-quiet { color: #fff; }
+.rr-visual { position: relative; }
+.rr-photo { aspect-ratio: 4 / 5; min-height: 0; border-radius: 28px; }
+.rr-sticker { position: absolute; left: -36px; bottom: 36px; width: 150px; height: 150px; display: grid; place-items: center; text-align: center; padding: 18px; margin: 0; border-radius: 999px; background: var(--accent); color: var(--ink); font-family: var(--font-head); font-weight: var(--head-weight); font-size: 1.3rem; line-height: 1.05; transform: rotate(-10deg); box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+.rr-why { align-items: start; margin-bottom: 56px; }
+.rr-reasons-head { color: var(--brand); }
+.rr-why h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.tpl-rapid-response .stat { border-top-color: var(--brand); }
+.tpl-rapid-response .stat .icon { color: var(--brand); }
+.rr-other { margin-top: 40px; }
+.rr-other h3 { font-size: 1.6rem; margin-bottom: 6px; }
+.tpl-rapid-response .card-box { border-radius: 24px; box-shadow: 0 24px 60px rgba(43,26,94,.18); border-color: var(--line); }
+.tpl-rapid-response .ph-toggle, .tpl-rapid-response .ph-amounts span, .tpl-rapid-response .ph-btn, .tpl-rapid-response .ph-field i { border-radius: 12px; }
+.tpl-rapid-response .ph-toggle span { border-radius: 10px; }
+.tpl-rapid-response .pw { border-radius: 20px; }
+@media (max-width: 880px) { .rr-grid { grid-template-columns: 1fr; gap: 40px; } .rr-sticker { left: auto; right: 12px; bottom: -24px; width: 120px; height: 120px; font-size: 1.05rem; } .rr-photo { aspect-ratio: 4 / 3; } }
